@@ -35,8 +35,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
  
-@Consumes({ MediaType.APPLICATION_JSON })
-@Produces({ MediaType.APPLICATION_JSON })
+@Consumes({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 public abstract class BaseBean<E extends Serializable, D extends DTO, PK> implements Bean<E, D, PK> {      
    
     @PersistenceContext
@@ -63,6 +63,7 @@ public abstract class BaseBean<E extends Serializable, D extends DTO, PK> implem
         return (Class<T>) genericType.getActualTypeArguments()[index];
     }
    
+    
     @GET
     @Override
     public List<D> all() {

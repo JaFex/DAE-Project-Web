@@ -43,7 +43,7 @@
                         <div class="card-body">
                           <h2 class="card-title">Clients</h2>
                           <p class="card-text">Clients informations</p>
-                          <h:dataTable var="client" value="#{am.clients}" class="table table-hover">
+                          <h:dataTable var="client" value="#{am.allClientsREST}" class="table table-hover">
                               <h:column>
                                     <f:facet name="header">Username</f:facet>
                                     <h:outputText value="#{client.username}"></h:outputText>

@@ -11,6 +11,7 @@ import lombok.Setter;
 import javax.persistence.Id;
 
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +19,7 @@ import lombok.Setter;
 public class User implements Serializable {
     
     @Id
+    @NotNull
     private @Getter @Setter String username;
     private @Getter @Setter String password;
 

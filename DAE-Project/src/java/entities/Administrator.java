@@ -13,7 +13,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 
-
 @Entity
 @Table(name = "ADMINISTRATORS")
 @NamedQueries(value = {
@@ -23,14 +22,16 @@ public class Administrator extends User{
     
     private @Getter @Setter String name;
     private @Getter @Setter String role;
+    private @Getter @Setter String email;
 
     public Administrator() {
     }
 
-    public Administrator(String name, String role, String username, String password) {
+    public Administrator(String name, String role, String username, String password, String email) {
         super(username, password);
         this.name = name;
         this.role = role;
+        this.email = email;
     }
     
     
