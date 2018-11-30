@@ -8,20 +8,20 @@ package entities;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-/**
- *
- * @author Carolina Marques
- */
 
 
+//@NamedQuery(name = "getAllClients", query = "SELECT c FROM Client c")
 
 
 @Entity
 @Table(name = "CLIENTS")
-@NamedQuery(name = "getAllClients", query = "SELECT c FROM Client c")
+@NamedQueries(value = {
+    @NamedQuery(name = "Client.all", query = "SELECT c FROM Client c"),
+})
 public class Client extends User{
     
     private @Getter @Setter String nameOfCompany;

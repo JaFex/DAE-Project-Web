@@ -5,10 +5,14 @@
  */
 package dtos;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
 import lombok.Setter;
 
-
+@XmlRootElement(name = "Client")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ClientDTO extends UserDTO {
     
     private @Getter @Setter String nameOfCompany;

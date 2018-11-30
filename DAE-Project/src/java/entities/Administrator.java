@@ -8,16 +8,17 @@ package entities;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-/**
- *
- * @author Carolina Marques
- */
 
 
 @Entity
 @Table(name = "ADMINISTRATORS")
+@NamedQueries(value = {
+    @NamedQuery(name = "Administrator.all", query = "SELECT a FROM Administrator a"),
+})
 public class Administrator extends User{
     
     private @Getter @Setter String name;
