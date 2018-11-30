@@ -18,9 +18,6 @@ import javax.persistence.Table;
  * @author Carolina Marques
  */
 
-
-
-
 @Entity
 @Table(name = "CLIENTS")
 @NamedQuery(name = "getAllClients", query = "SELECT c FROM Client c")

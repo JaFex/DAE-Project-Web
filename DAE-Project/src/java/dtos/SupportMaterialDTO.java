@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
+package dtos;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,9 +17,10 @@ import lombok.Setter;
  *
  * @author Carolina Marques
  */
-@Entity
-@Table(name = "SUPPORT_MATERIALS")
-class SupportMaterial extends ConfigurationCaracteristic{
+
+@XmlRootElement(name = "SupportMaterial")
+@XmlAccessorType(XmlAccessType.FIELD)
+class SupportMaterialDTO extends ConfigurationCaracteristicDTO{
     
     private @Getter @Setter List<String> userManualsList;
     private @Getter @Setter List<String> programmerManualsList;
@@ -28,7 +30,7 @@ class SupportMaterial extends ConfigurationCaracteristic{
     private @Getter @Setter List<String> knowledgeArticlesList;
     private @Getter @Setter List<String> supportDocsList;
 
-    public SupportMaterial() {
+    public SupportMaterialDTO() {
         userManualsList = new ArrayList<>();
         programmerManualsList = new ArrayList<>();
         tutorialsList = new ArrayList<>();
@@ -37,5 +39,15 @@ class SupportMaterial extends ConfigurationCaracteristic{
         knowledgeArticlesList = new ArrayList<>();
         supportDocsList = new ArrayList<>();
     }
-       
+    
+    @Override
+    public void clear(){
+        userManualsList = null;
+        programmerManualsList = null;
+        tutorialsList = null;
+        linksForSitesInProductionsList = null;
+        videosList = null;
+        knowledgeArticlesList = null;
+        supportDocsList = null;
+    }
 }

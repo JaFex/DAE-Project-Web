@@ -5,6 +5,8 @@
  */
 package entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +14,8 @@ import lombok.Setter;
  *
  * @author Carolina Marques
  */
+@Entity
+@Table(name = "MODULES")
 class Module extends ConfigurationCaracteristic{
     
     private @Getter @Setter String state; //adicionado ou configurado
@@ -19,9 +23,9 @@ class Module extends ConfigurationCaracteristic{
     public Module() {
     }
 
-    public Module(String state, int id, String description) {
-        super(id, description);
+    public Module(String state, int id, String description, String name) {
+        super(id, description, name);
         this.state = state;
     }
-   
+ 
 }

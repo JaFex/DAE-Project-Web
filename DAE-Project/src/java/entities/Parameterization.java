@@ -5,10 +5,15 @@
  */
 package entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author Carolina Marques
  */
+@Entity
+@Table(name = "PARAMETRIZATIONS")
 class Parameterization extends ConfigurationCaracteristic{
 
     public Parameterization() {

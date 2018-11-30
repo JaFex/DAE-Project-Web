@@ -6,7 +6,10 @@
 package entities;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +18,7 @@ import lombok.Setter;
  *
  * @author Carolina Marques
  */
+@MappedSuperclass
 public class ConfigurationCaracteristic implements Serializable{
     @Id
     @NotNull
@@ -25,8 +29,9 @@ public class ConfigurationCaracteristic implements Serializable{
     public ConfigurationCaracteristic() {
     }
 
-    public ConfigurationCaracteristic(int id, String description) {
+    public ConfigurationCaracteristic(int id, String description, String name) {
         this.id = id;
         this.description = description;
+        this.name = name;
     }
 }

@@ -5,6 +5,8 @@
  */
 package entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +14,8 @@ import lombok.Setter;
  *
  * @author Carolina Marques
  */
+@Entity
+@Table(name = "RESOURCES")
 class Resource extends ConfigurationCaracteristic{
     
     private @Getter @Setter TypeOfResource type; //hardware ou serviço cloud

@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
+package dtos;
 
+import entities.ConfigurationCaracteristic;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,28 +18,31 @@ import lombok.Setter;
  *
  * @author Carolina Marques
  */
-@Entity
-@Table(name = "ARTEFACTS_REPOSITORY")
-class ArtefactRepository extends ConfigurationCaracteristic{
+@XmlRootElement(name = "ArtefactRepository")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class ArtefactRepositoryDTO extends ConfigurationCaracteristicDTO{
 
     private @Getter @Setter String sourceCode;
     private @Getter @Setter List<String> dataBases;
     private @Getter @Setter List<String> scripts;
     private @Getter @Setter List<String> libraries;
     
-    public ArtefactRepository() {
+    public ArtefactRepositoryDTO() {
     }
 
-    public ArtefactRepository(String sourceCode, int id, String description, String name) {
-        super(id, description, name);
+    public ArtefactRepositoryDTO(String sourceCode, int id, String name, String description) {
+        super(id, name, description);
         this.sourceCode = sourceCode;
         dataBases = new ArrayList<>();
         scripts = new ArrayList<>();
         libraries = new ArrayList<>();
     }
-
-    
-    
-    
        
+    @Override
+    public void clear() {
+        sourceCode = null;
+        dataBases = null;
+        scripts = null;
+        libraries = null;
+    }   
 }
