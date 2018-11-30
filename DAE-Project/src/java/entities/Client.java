@@ -7,11 +7,14 @@ package entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -25,6 +28,8 @@ public class Client extends User{
     private @Getter @Setter String nameOfCompany;
     private @Getter @Setter String address;
     private @Getter @Setter String personOfContact;
+    
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private @Getter @Setter List<Configuration> configurationsList;
 
     public Client() {
