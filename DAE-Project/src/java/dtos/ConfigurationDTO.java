@@ -7,6 +7,7 @@ package dtos;
 import entities.State;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -21,6 +22,8 @@ import lombok.Setter;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ConfigurationDTO implements DTO{
 
+    @Id
+    private @Getter @Setter int id; 
     private @Getter @Setter String descricao;
     private @Getter @Setter State state;
     private @Getter @Setter String softwareName;
@@ -38,7 +41,8 @@ public class ConfigurationDTO implements DTO{
     public ConfigurationDTO() {
     }
 
-    public ConfigurationDTO(String descricao, State state, String softwareName, String baseVersion, MaintenanceContractDTO maintenanceContractData, ClientDTO client) {
+    public ConfigurationDTO(int id, String descricao, State state, String softwareName, String baseVersion, MaintenanceContractDTO maintenanceContractData, ClientDTO client) {
+        this.id = id;
         this.descricao = descricao;
         this.state = state;
         this.softwareName = softwareName;
