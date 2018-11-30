@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 import lombok.Getter;
@@ -21,6 +22,8 @@ import lombok.Setter;
 @Table(name = "CONFIGURATIONS")
 public class Configuration implements Serializable{
     
+    @Id
+    private @Getter @Setter int id; 
     private @Getter @Setter String descricao;
     private @Getter @Setter State state;
     private @Getter @Setter String softwareName;
