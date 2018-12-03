@@ -21,13 +21,12 @@ public class ConfigBean {
     @PostConstruct
     public void populateBD() {
         try {
-            AdministratorDTO administratorDTO= new AdministratorDTO("John", "Amin", "admin@admin.com", "admin", "password");
-            AdministratorDTO meicm = administratorBean.create(new AdministratorDTO("John", "Amin", "admin@admin.com", "admin", "password"));
-            AdministratorDTO mcif = administratorBean.create(new AdministratorDTO("Alex", "Amin", "alex@admin.com", "alex", "password"));
             
-            ClientDTO dae = clientBean.create(new ClientDTO("Unclo", "Rua", "525565465", "foro", "password"));
-            ClientDTO ltp = clientBean.create(new ClientDTO("Unclo", "Rua", "525565465", "fooro", "password"));
-
+            for(int i = 1; i < 6; i++){
+                administratorBean.create(new AdministratorDTO("Admin" + i, "Admin", "admin" + i + "@admin.com", "admin" + i, "password"));
+                clientBean.create(new ClientDTO("Company" + i, "Street" + i, "PersonOfContact" + i, "Client" + i, "password"));
+            }
+            
         } catch (Exception e) {
             System.err.println("[ERROR] @ Application bootstrap | Cause: " + e.getMessage());
         }

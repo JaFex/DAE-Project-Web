@@ -16,18 +16,13 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Users
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                   <h:link class="dropdown-item" outcome="admin_administrator_list" value="Administrators" />
+                    <h:link class="dropdown-item" value="Clients" outcome="admin_client_list" />
                   </div>
                 </li>
               </ul>
@@ -40,7 +35,11 @@
                         <div class="card-body">
                           <h2 class="card-title">Clients</h2>
                           <p class="card-text">Clients informations</p>
-                          <h:dataTable var="client" value="#{am.clients}" class="table table-hover">
+                          <h:link value="Create" class="btn btn-success float-right" outcome="admin_client_create" />
+                          <br/>
+                          <br/>
+                          <h:form>
+                          <h:dataTable var="client" value="#{am.allClientsREST}" class="table table-hover">
                               <h:column>
                                     <f:facet name="header">Username</f:facet>
                                     <h:outputText value="#{client.username}"></h:outputText>
@@ -53,7 +52,30 @@
                                     <f:facet name="header">Address</f:facet>
                                     <h:outputText value="#{client.address}"></h:outputText>
                                 </h:column>
+                                <h:column>
+                                    <f:facet name="header">Person of contact</f:facet>
+                                    <h:outputText value="#{client.personOfContact}"></h:outputText>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Action</f:facet>
+                                    <h:commandLink value="Details" action="admin_client_details?faces-redirect=true" class="btn btn-primary btn-sm">
+                                        <f:setPropertyActionListener target="#{am.currentClient}" value="#{client}" />
+                                    </h:commandLink>
+                                    &nbsp;
+                                    <h:commandLink class="btn btn-warning btn-sm" value="Edit" action="admin_client_update?faces-redirect=true">
+                                        <f:setPropertyActionListener target="#{am.currentClient}" value="#{client}" />
+                                    </h:commandLink>
+                                    &nbsp;
+                                    <h:commandLink 
+                                                styleClass="btn btn-danger btn-sm"
+                                                id = "removeButton" 
+                                                value = "Remove"
+                                                action= "#{am.deleteClientsREST()}" >
+                                        <f:setPropertyActionListener target="#{am.currentClient}" value="#{client}" />
+                                    </h:commandLink>
+                                </h:column>
                             </h:dataTable>
+                          </h:form>
                         </div>
                     </div>
                 </div>

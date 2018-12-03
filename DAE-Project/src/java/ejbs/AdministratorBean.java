@@ -8,13 +8,8 @@ import javax.ws.rs.Path;
 
 @Stateless
 @Path("/administrators")
-public class AdministratorBean extends BaseBean<Administrator, AdministratorDTO, String> {
+public class AdministratorBean extends BaseBean<Administrator, AdministratorDTO, Long> {
 
-    /*@Path("all")
-    @Override
-    public List<AdministratorDTO> all() {
-        return super.all();
-    }*/
 
     
     

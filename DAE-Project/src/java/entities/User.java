@@ -6,6 +6,7 @@
 package entities;
 
 import java.io.Serializable;
+import javax.persistence.GeneratedValue;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Id;
@@ -19,8 +20,13 @@ import lombok.Setter;
 public class User implements Serializable {
     
     @Id
+    @GeneratedValue
+    private @Getter @Setter Long id;
+    
     @NotNull
     private @Getter @Setter String username;
+    
+    @NotNull
     private @Getter @Setter String password;
 
     public User() {

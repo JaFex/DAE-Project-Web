@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 /**
@@ -25,6 +26,7 @@ import lombok.Setter;
 public class Configuration implements Serializable{
     
     @Id
+    @NotNull
     private @Getter @Setter int id; 
     private @Getter @Setter String descricao;
     private @Getter @Setter State state;

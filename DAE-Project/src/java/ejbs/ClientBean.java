@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 
 @Stateless
 @Path("/clients")
-public class ClientBean extends BaseBean<Client, ClientDTO, String> {
+public class ClientBean extends BaseBean<Client, ClientDTO, Long> {
 
     
 }
