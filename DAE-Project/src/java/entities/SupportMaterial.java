@@ -19,7 +19,7 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "SUPPORT_MATERIALS")
-class SupportMaterial extends ConfigurationCaracteristic{
+public class SupportMaterial extends ConfigurationCaracteristic{
     
     private @Getter @Setter List<String> userManualsList;
     private @Getter @Setter List<String> programmerManualsList;
@@ -38,5 +38,4 @@ class SupportMaterial extends ConfigurationCaracteristic{
         knowledgeArticlesList = new ArrayList<>();
         supportDocsList = new ArrayList<>();
     }
-       
 }

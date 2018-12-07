@@ -23,14 +23,14 @@ import lombok.Setter;
 public class ConfigurationCaracteristic implements Serializable{
     @Id
     @NotNull
-    private @Getter @Setter int id;
+    private @Getter @Setter Long id;
     private @Getter @Setter String name;
     private @Getter @Setter String description;
 
     public ConfigurationCaracteristic() {
     }
 
-    public ConfigurationCaracteristic(int id, String description, String name) {
+    public ConfigurationCaracteristic(Long id, String description, String name) {
         this.id = id;
         this.description = description;
         this.name = name;

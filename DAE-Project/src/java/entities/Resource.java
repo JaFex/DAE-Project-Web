@@ -17,7 +17,7 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "RESOURCES")
-class Resource extends ConfigurationCaracteristic{
+public class Resource extends ConfigurationCaracteristic{
     
     private @Getter @Setter TypeOfResource type; //hardware ou serviço cloud
 

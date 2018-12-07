@@ -17,14 +17,14 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "MODULES")
-class Module extends ConfigurationCaracteristic{
+public class Module extends ConfigurationCaracteristic{
     
     private @Getter @Setter String state; //adicionado ou configurado
 
     public Module() {
     }
 
-    public Module(String state, int id, String description, String name) {
+    public Module(String state, Long id, String description, String name) {
         super(id, description, name);
         this.state = state;
     }

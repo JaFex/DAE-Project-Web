@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "Parametrization")
 @XmlAccessorType(XmlAccessType.FIELD)
-class ParameterizationDTO extends ConfigurationCaracteristicDTO{
+public class ParameterizationDTO extends ConfigurationCaracteristicDTO{
 
     public ParameterizationDTO() {
     }

@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "Extension")
 @XmlAccessorType(XmlAccessType.FIELD)
-class ExtensionDTO extends ConfigurationCaracteristicDTO{
+public class ExtensionDTO extends ConfigurationCaracteristicDTO{
 
     public ExtensionDTO() {
     } 

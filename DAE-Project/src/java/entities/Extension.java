@@ -19,7 +19,7 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "EXTENSIONS")
-class Extension extends ConfigurationCaracteristic{
+public class Extension extends ConfigurationCaracteristic{
 
     public Extension() {
     } 

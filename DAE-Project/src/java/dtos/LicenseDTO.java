@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "License")
 @XmlAccessorType(XmlAccessType.FIELD)
-class LicenseDTO extends ConfigurationCaracteristicDTO{
+public class LicenseDTO extends ConfigurationCaracteristicDTO{
 
     public LicenseDTO() {
     }

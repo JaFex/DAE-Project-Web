@@ -19,7 +19,7 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "LICENSES")
-class License extends ConfigurationCaracteristic{
+public class License extends ConfigurationCaracteristic{
 
     public License() {
     }

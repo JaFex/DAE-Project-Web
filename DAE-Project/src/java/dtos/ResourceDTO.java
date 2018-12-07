@@ -19,7 +19,7 @@ import lombok.Setter;
  */
 @XmlRootElement(name = "Resource")
 @XmlAccessorType(XmlAccessType.FIELD)
-class ResourceDTO extends ConfigurationCaracteristicDTO{
+public class ResourceDTO extends ConfigurationCaracteristicDTO{
     
     private @Getter @Setter TypeOfResource type; //hardware ou serviço cloud
 

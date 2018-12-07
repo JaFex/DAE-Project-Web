@@ -19,7 +19,7 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "MAINTENANCE_CONTRACTS")
-class MaintenanceContract extends ConfigurationCaracteristic{
+public class MaintenanceContract extends ConfigurationCaracteristic{
 
     public MaintenanceContract() {
     }

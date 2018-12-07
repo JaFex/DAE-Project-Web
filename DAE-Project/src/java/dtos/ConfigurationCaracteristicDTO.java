@@ -20,7 +20,7 @@ import lombok.Setter;
  */
 @XmlRootElement(name = "ConfigurationCaracteristic")
 @XmlAccessorType(XmlAccessType.FIELD)
-class ConfigurationCaracteristicDTO implements DTO{
+public class ConfigurationCaracteristicDTO implements DTO{
 
     @Id
     @NotNull

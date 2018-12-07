@@ -3,21 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
+package ejbs;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import dtos.MaintenanceContractDTO;
+import entities.MaintenanceContract;
+import javax.ejb.Stateless;
+import javax.ws.rs.Path;
 
 /**
  * @author João Felix nº2161347
  * @author Carolina Marques nº2150644
  * @author Elton Pastilha nº2160849
  */
-@Entity
-@Table(name = "PARAMETRIZATIONS")
-public class Parameterization extends ConfigurationCaracteristic{
-
-    public Parameterization() {
-    }
-      
+@Stateless
+@Path("/maintenance_contracts")
+public class MaintenanceContractBean extends BaseBean<MaintenanceContract, MaintenanceContractDTO, Long> {
+    
 }

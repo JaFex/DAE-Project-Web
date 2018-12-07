@@ -19,7 +19,7 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "ARTEFACTS_REPOSITORY")
-class ArtefactRepository extends ConfigurationCaracteristic{
+public class ArtefactRepository extends ConfigurationCaracteristic{
 
     private @Getter @Setter String sourceCode;
     private @Getter @Setter List<String> dataBases;
@@ -29,7 +29,7 @@ class ArtefactRepository extends ConfigurationCaracteristic{
     public ArtefactRepository() {
     }
 
-    public ArtefactRepository(String sourceCode, int id, String description, String name) {
+    public ArtefactRepository(String sourceCode, Long id, String description, String name) {
         super(id, description, name);
         this.sourceCode = sourceCode;
         dataBases = new ArrayList<>();

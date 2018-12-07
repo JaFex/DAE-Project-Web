@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "MaintenanceContract")
 @XmlAccessorType(XmlAccessType.FIELD)
-class MaintenanceContractDTO extends ConfigurationCaracteristicDTO{
+public class MaintenanceContractDTO extends ConfigurationCaracteristicDTO{
 
     public MaintenanceContractDTO() {
     }

@@ -28,7 +28,7 @@ public class Configuration implements Serializable{
     
     @Id
     @NotNull
-    private @Getter @Setter int id; 
+    private @Getter @Setter Long id; 
     private @Getter @Setter String descricao;
     private @Getter @Setter State state;
     private @Getter @Setter String softwareName;

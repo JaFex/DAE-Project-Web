@@ -21,7 +21,7 @@ import lombok.Setter;
 
 @XmlRootElement(name = "SupportMaterial")
 @XmlAccessorType(XmlAccessType.FIELD)
-class SupportMaterialDTO extends ConfigurationCaracteristicDTO{
+public class SupportMaterialDTO extends ConfigurationCaracteristicDTO{
     
     private @Getter @Setter List<String> userManualsList;
     private @Getter @Setter List<String> programmerManualsList;

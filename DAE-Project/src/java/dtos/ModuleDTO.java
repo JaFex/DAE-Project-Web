@@ -18,7 +18,7 @@ import lombok.Setter;
  */
 @XmlRootElement(name = "Module")
 @XmlAccessorType(XmlAccessType.FIELD)
-class ModuleDTO extends ConfigurationCaracteristicDTO{
+public class ModuleDTO extends ConfigurationCaracteristicDTO{
     
     private @Getter @Setter String state; //adicionado ou configurado
 
