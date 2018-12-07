@@ -37,15 +37,16 @@ public class Client extends User{
     private @Getter @Setter String address;
     
     @NotNull
-    private @Getter @Setter String personOfContact;
+    @OneToMany(mappedBy = "personOfContact", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private @Getter @Setter List<PersonOfContact> personOfContact;
     
     public Client() {
     }
 
-    public Client(String nameOfCompany, String address, String personOfContact, String username, String password) {
+    public Client(String nameOfCompany, String address, String username, String password) {
         super(username, password);
         this.nameOfCompany = nameOfCompany;
         this.address = address;
-        this.personOfContact = personOfContact;
+        personOfContact = new ArrayList<>();
     }   
 }
