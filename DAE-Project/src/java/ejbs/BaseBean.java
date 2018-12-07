@@ -34,7 +34,11 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
- 
+ /**
+ * @author João Felix nº2161347
+ * @author Carolina Marques nº2150644
+ * @author Elton Pastilha nº2160849
+ */
 @Consumes({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 public abstract class BaseBean<E extends Serializable, D extends DTO, PK> implements Bean<E, D, PK> {      

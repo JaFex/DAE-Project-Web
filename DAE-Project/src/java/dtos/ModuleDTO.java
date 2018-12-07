@@ -12,8 +12,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- *
- * @author Carolina Marques
+ * @author João Felix nº2161347
+ * @author Carolina Marques nº2150644
+ * @author Elton Pastilha nº2160849
  */
 @XmlRootElement(name = "Module")
 @XmlAccessorType(XmlAccessType.FIELD)

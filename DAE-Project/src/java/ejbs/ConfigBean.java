@@ -7,7 +7,11 @@ import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 
-
+/**
+ * @author João Felix nº2161347
+ * @author Carolina Marques nº2150644
+ * @author Elton Pastilha nº2160849
+ */
 @Singleton
 @Startup
 public class ConfigBean {

@@ -9,8 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- *
- * @author Carolina Marques
+ * @author João Felix nº2161347
+ * @author Carolina Marques nº2150644
+ * @author Elton Pastilha nº2160849
  */
 @Entity
 @Table(name = "PARAMETRIZATIONS")

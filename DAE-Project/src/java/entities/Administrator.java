@@ -12,7 +12,11 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-
+/**
+ * @author João Felix nº2161347
+ * @author Carolina Marques nº2150644
+ * @author Elton Pastilha nº2160849
+ */
 @Entity
 @Table(name = "ADMINISTRATORS")
 @NamedQueries(value = {

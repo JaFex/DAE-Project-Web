@@ -9,6 +9,12 @@ import javax.enterprise.inject.Default;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 
+/**
+ * @author João Felix nº2161347
+ * @author Carolina Marques nº2150644
+ * @author Elton Pastilha nº2160849
+ */
+
 @Default
 @ApplicationScoped
 public class Mapper extends ModelMapper {

@@ -13,7 +13,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
 import lombok.Setter;
-
+/**
+ * @author João Felix nº2161347
+ * @author Carolina Marques nº2150644
+ * @author Elton Pastilha nº2160849
+ */
 @XmlRootElement(name = "Client")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ClientDTO extends UserDTO {

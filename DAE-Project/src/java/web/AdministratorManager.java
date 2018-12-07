@@ -24,6 +24,11 @@ import javax.ws.rs.core.MediaType;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * @author João Felix nº2161347
+ * @author Carolina Marques nº2150644
+ * @author Elton Pastilha nº2160849
+ */
 
 @ManagedBean(name = "am")
 @SessionScoped
