@@ -24,9 +24,8 @@ public class Module extends ConfigurationCaracteristic{
     public Module() {
     }
 
-    public Module(String state, Long id, String description, String name) {
-        super(id, description, name);
+    public Module(String state, String description, String name) {
+        super(description, name);
         this.state = state;
     }
- 
 }

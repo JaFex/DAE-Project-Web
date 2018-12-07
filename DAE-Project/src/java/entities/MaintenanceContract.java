@@ -5,6 +5,7 @@
  */
 package entities;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -20,8 +21,30 @@ import lombok.Setter;
 @Entity
 @Table(name = "MAINTENANCE_CONTRACTS")
 public class MaintenanceContract extends ConfigurationCaracteristic{
+    
+    @NotNull
+    private @Getter @Setter float valueToPay;
+    
+    @NotNull
+    private @Getter @Setter Frequency frequencyToPay;
+    
+    @NotNull
+    private @Getter @Setter int duration;
+    
+    @NotNull
+    private @Getter @Setter Date beginningDate;
 
     public MaintenanceContract() {
     }
+
+    public MaintenanceContract(float valueToPay, Frequency frequencyToPay, int duration, Date beginningDate, String description, String name) {
+        super(description, name);
+        this.valueToPay = valueToPay;
+        this.frequencyToPay = frequencyToPay;
+        this.duration = duration;
+        this.beginningDate = beginningDate;
+    }
+    
+    
 
 }

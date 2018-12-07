@@ -8,13 +8,18 @@ package entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import lombok.Getter;
 import lombok.Setter;
 /**
@@ -27,29 +32,58 @@ import lombok.Setter;
 public class Configuration implements Serializable{
     
     @Id
-    @NotNull
+    @GeneratedValue
     private @Getter @Setter Long id; 
+    
+    @NotNull
     private @Getter @Setter String descricao;
+    
+    @NotNull
     private @Getter @Setter State state;
+    
+    @NotNull
     private @Getter @Setter String softwareName;
+    
+    @NotNull
     private @Getter @Setter String baseVersion;
+    
+    @Null
     private @Getter @Setter List<Module> modulesList;
+    
+    @Null
     private @Getter @Setter List<Resource> usedResourcesList;
+    
+    @Null
     private @Getter @Setter List<License> activatedLicensesList;
-    private @Getter @Setter List<Parameterization> activatedParameterizationsList;
-    private @Getter @Setter List<Extension> usedExtensionsList;
+    
+    @Null
+    private @Getter @Setter List<String> activatedParameterizationsList;
+    
+    @Null
+    private @Getter @Setter List<String> usedExtensionsList;
+    
+    @NotNull
     private @Getter @Setter MaintenanceContract maintenanceContractData;
+    
+    @Null
     private @Getter @Setter List<ArtefactRepository> repositoryFactsList; 
+    
+    @Null
     private @Getter @Setter List<SupportMaterial> suportMaterialsList; 
     
-    @ManyToOne
-    @JoinColumn(name="CLIENT_ID")
-    private @Getter @Setter Client client;
-
+    @Null
+    @OneToMany(mappedBy = "messageList", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private @Getter @Setter List<Message> messageList;
+    
+    @NotNull
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="CONFIGURATION_ID")
+    private @Getter @Setter User user;
+    
     public Configuration() {
     }
 
-    public Configuration(String descricao, State state, String softwareName, String baseVersion, MaintenanceContract maintenanceContractData, Client client) {
+    public Configuration(String descricao, State state, String softwareName, String baseVersion, MaintenanceContract maintenanceContractData) {
         this.descricao = descricao;
         this.state = state;
         this.softwareName = softwareName;
@@ -62,7 +96,5 @@ public class Configuration implements Serializable{
         this.maintenanceContractData = maintenanceContractData;
         repositoryFactsList = new ArrayList<>();
         suportMaterialsList = new ArrayList<>();
-        this.client = client;
-    }
-         
+    }        
 }

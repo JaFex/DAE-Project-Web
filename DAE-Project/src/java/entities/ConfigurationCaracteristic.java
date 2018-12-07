@@ -7,6 +7,7 @@ package entities;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
@@ -21,17 +22,21 @@ import lombok.Setter;
  */
 @MappedSuperclass
 public class ConfigurationCaracteristic implements Serializable{
+    
     @Id
-    @NotNull
+    @GeneratedValue
     private @Getter @Setter Long id;
+    
+    @NotNull
     private @Getter @Setter String name;
+    
+    @NotNull
     private @Getter @Setter String description;
 
     public ConfigurationCaracteristic() {
     }
 
-    public ConfigurationCaracteristic(Long id, String description, String name) {
-        this.id = id;
+    public ConfigurationCaracteristic(String description, String name) {
         this.description = description;
         this.name = name;
     }

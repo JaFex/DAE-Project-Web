@@ -6,13 +6,19 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Id;
 
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,6 +40,14 @@ public class User implements Serializable {
     
     @NotNull
     private @Getter @Setter String password;
+    
+    @Null
+    @OneToMany(mappedBy = "configuration", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private @Getter @Setter List<Configuration> configurationList;
+    
+    @Null
+    @OneToMany(mappedBy = "message", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private @Getter @Setter List<Message> messageList;
 
     public User() {
     }
@@ -41,6 +55,6 @@ public class User implements Serializable {
     public User(String username, String password) {
         this.username = username;
         this.password = password;
-    }
-    
+        configurationList = new ArrayList<>();
+    }   
 }

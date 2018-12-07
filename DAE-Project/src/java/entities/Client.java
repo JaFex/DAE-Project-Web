@@ -16,6 +16,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 /**
  * @author João Felix nº2161347
  * @author Carolina Marques nº2150644
@@ -29,13 +30,15 @@ import javax.persistence.Table;
 })
 public class Client extends User{
     
+    @NotNull
     private @Getter @Setter String nameOfCompany;
+    
+    @NotNull
     private @Getter @Setter String address;
+    
+    @NotNull
     private @Getter @Setter String personOfContact;
     
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private @Getter @Setter List<Configuration> configurationsList;
-
     public Client() {
     }
 
@@ -44,7 +47,5 @@ public class Client extends User{
         this.nameOfCompany = nameOfCompany;
         this.address = address;
         this.personOfContact = personOfContact;
-        configurationsList = new ArrayList<>();
-    }  
-    
+    }   
 }

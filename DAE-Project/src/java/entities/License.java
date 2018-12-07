@@ -5,6 +5,7 @@
  */
 package entities;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -20,8 +21,19 @@ import lombok.Setter;
 @Entity
 @Table(name = "LICENSES")
 public class License extends ConfigurationCaracteristic{
+    
+    @NotNull
+    private @Getter @Setter Date beginningDate;
+    
+    @NotNull
+    private @Getter @Setter Date endDate;
 
     public License() {
     }
 
+    public License(Date beginningDate, Date endDate, String description, String name) {
+        super(description, name);
+        this.beginningDate = beginningDate;
+        this.endDate = endDate;
+    }
 }

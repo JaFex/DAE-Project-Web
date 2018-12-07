@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author João Felix nº2161347
@@ -24,8 +25,13 @@ import javax.persistence.Table;
 })
 public class Administrator extends User{
     
+    @NotNull
     private @Getter @Setter String name;
+    
+    @NotNull
     private @Getter @Setter String role;
+    
+    @NotNull
     private @Getter @Setter String email;
 
     public Administrator() {

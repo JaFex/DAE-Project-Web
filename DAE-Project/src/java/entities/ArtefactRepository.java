@@ -30,15 +30,10 @@ public class ArtefactRepository extends ConfigurationCaracteristic{
     }
 
     public ArtefactRepository(String sourceCode, Long id, String description, String name) {
-        super(id, description, name);
+        super(description, name);
         this.sourceCode = sourceCode;
         dataBases = new ArrayList<>();
         scripts = new ArrayList<>();
         libraries = new ArrayList<>();
-    }
-
-    
-    
-    
-       
+    }   
 }
