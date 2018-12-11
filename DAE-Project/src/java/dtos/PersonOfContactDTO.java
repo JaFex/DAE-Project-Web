@@ -5,8 +5,12 @@
  */
 package dtos;
 
+import entities.Client;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -15,14 +19,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author João Felix nº2161347
- * @author Carolina Marques nº2150644
- * @author Elton Pastilha nº2160849
+ *
+ * @author Carolina Marques
  */
-@XmlRootElement(name = "ConfigurationCaracteristic")
+@XmlRootElement(name = "PersonOfContact")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ConfigurationCaracteristicDTO implements DTO{
-
+public class PersonOfContactDTO implements DTO{
+    
     @Id
     @GeneratedValue
     private @Getter @Setter Long id;
@@ -31,19 +34,29 @@ public class ConfigurationCaracteristicDTO implements DTO{
     private @Getter @Setter String name;
     
     @NotNull
-    private @Getter @Setter String description;
+    private @Getter @Setter String email;
+    
+    @NotNull
+    private @Getter @Setter String phoneNumber;
+    
+    @NotNull
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="PERSONOFCONTACT_ID")
+    private @Getter @Setter Client client;
 
-    public ConfigurationCaracteristicDTO() {
+    public PersonOfContactDTO() {
     }
 
-    public ConfigurationCaracteristicDTO(String name, String description) {
+    public PersonOfContactDTO(String name, String email, String phoneNumber) {
         this.name = name;
-        this.description = description;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
     }
     
     @Override
-    public void clear() {
+    public void clear(){
         name = null;
-        description = null;
+        email = null;
+        phoneNumber = null;
     }    
 }

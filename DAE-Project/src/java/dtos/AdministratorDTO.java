@@ -1,5 +1,6 @@
 package dtos;
 
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -14,8 +15,13 @@ import lombok.Setter;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class AdministratorDTO extends UserDTO {
     
+    @NotNull
     private @Getter @Setter String name;
+    
+    @NotNull
     private @Getter @Setter String role;
+    
+    @NotNull
     private @Getter @Setter String email;
 
     public AdministratorDTO() {

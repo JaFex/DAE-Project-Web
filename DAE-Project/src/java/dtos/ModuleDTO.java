@@ -25,8 +25,8 @@ public class ModuleDTO extends ConfigurationCaracteristicDTO{
     public ModuleDTO() {
     }
 
-    public ModuleDTO(String state, int id, String name, String description) {
-        super(id, name, description);
+    public ModuleDTO(String state, String description, String name) {
+        super(description, name);
         this.state = state;
     }
     
@@ -34,5 +34,4 @@ public class ModuleDTO extends ConfigurationCaracteristicDTO{
     public void clear(){
         state = null;
     }
- 
 }

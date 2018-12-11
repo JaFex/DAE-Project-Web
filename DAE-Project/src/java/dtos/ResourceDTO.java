@@ -26,8 +26,7 @@ public class ResourceDTO extends ConfigurationCaracteristicDTO{
     public ResourceDTO() {
     }
 
-    public ResourceDTO(TypeOfResource type, int id, String name, String description) {
-        super(id, name, description);
+    public ResourceDTO(TypeOfResource type) {
         this.type = type;
     }
 

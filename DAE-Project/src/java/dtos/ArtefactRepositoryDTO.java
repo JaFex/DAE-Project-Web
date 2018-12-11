@@ -8,6 +8,7 @@ package dtos;
 import entities.ConfigurationCaracteristic;
 import java.util.ArrayList;
 import java.util.List;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -23,22 +24,29 @@ import lombok.Setter;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ArtefactRepositoryDTO extends ConfigurationCaracteristicDTO{
 
+    @NotNull
     private @Getter @Setter String sourceCode;
+    
+    @NotNull
     private @Getter @Setter List<String> dataBases;
+    
+    @NotNull
     private @Getter @Setter List<String> scripts;
+    
+    @NotNull
     private @Getter @Setter List<String> libraries;
     
     public ArtefactRepositoryDTO() {
     }
 
-    public ArtefactRepositoryDTO(String sourceCode, int id, String name, String description) {
-        super(id, name, description);
+    public ArtefactRepositoryDTO(String sourceCode, String name, String description) {
+        super(name, description);
         this.sourceCode = sourceCode;
         dataBases = new ArrayList<>();
         scripts = new ArrayList<>();
         libraries = new ArrayList<>();
     }
-       
+ 
     @Override
     public void clear() {
         sourceCode = null;

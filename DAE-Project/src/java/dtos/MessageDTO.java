@@ -3,18 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
+package dtos;
 
-import java.io.Serializable;
+import entities.Configuration;
+import entities.User;
 import java.util.Date;
-import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,10 +24,10 @@ import lombok.Setter;
  *
  * @author Carolina Marques
  */
-@Entity
-@Table(name = "MESSAGES")
-public class Message implements Serializable{
-
+@XmlRootElement(name = "Message")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class MessageDTO implements DTO{
+    
     @Id
     @GeneratedValue
     private @Getter @Setter Long id;
@@ -46,13 +48,21 @@ public class Message implements Serializable{
     @JoinColumn(name="MESSAGELIST_ID")
     private @Getter @Setter Configuration configuration;
 
-    public Message() {
+    public MessageDTO() {
     }
 
-    public Message(String description, Date dateOfCreation, User user, Configuration configuration) {
+    public MessageDTO(String description, Date dateOfCreation, User user, Configuration configuration) {
         this.description = description;
         this.dateOfCreation = dateOfCreation;
         this.user = user;
         this.configuration = configuration;
-    }    
+    }
+    
+    @Override
+    public void clear(){
+        description = null;
+        dateOfCreation = null;
+        user = null;
+        configuration = null;
+    } 
 }
