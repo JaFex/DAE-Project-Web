@@ -11,6 +11,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Id;
@@ -32,7 +33,7 @@ import lombok.Setter;
 public class User implements Serializable {
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private @Getter @Setter Long id;
     
     @NotNull
@@ -57,4 +58,18 @@ public class User implements Serializable {
         this.password = password;
         configurationList = new ArrayList<>();
     }   
+    
+    private void addConfiguration(Configuration configuration){
+        if(configurationList.contains(configuration)){
+            return;
+        }
+        configurationList.add(configuration);
+    }
+    
+    private void removeObjectFromList(Configuration configuration){
+        if(!configurationList.contains(configuration) || configurationList.isEmpty()){
+            return;
+        }
+        configurationList.remove(configuration);
+    } 
 }

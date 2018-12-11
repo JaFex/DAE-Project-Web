@@ -44,7 +44,4 @@ public class MaintenanceContract extends ConfigurationCaracteristic{
         this.duration = duration;
         this.beginningDate = beginningDate;
     }
-    
-    
-
 }

@@ -49,4 +49,18 @@ public class Client extends User{
         this.address = address;
         personOfContact = new ArrayList<>();
     }   
+
+    public void addPersonOfContact(PersonOfContact person){
+        if(personOfContact.contains(person)){
+            return;
+        }
+        personOfContact.add(person);
+    }
+
+    public void removePersonOfContact(PersonOfContact person){
+        if(!personOfContact.contains(person) || personOfContact.isEmpty()){
+            return;
+        }
+        personOfContact.remove(person);
+    }
 }

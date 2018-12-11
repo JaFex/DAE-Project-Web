@@ -35,5 +35,47 @@ public class ArtefactRepository extends ConfigurationCaracteristic{
         dataBases = new ArrayList<>();
         scripts = new ArrayList<>();
         libraries = new ArrayList<>();
-    }   
+    }  
+    
+    public void addDatabase(String database){
+        if(dataBases.contains(database)){
+            return;
+        }
+        dataBases.add(database);
+    }
+
+    public void removeDatabase(String database){
+        if(!dataBases.contains(database) || dataBases.isEmpty()){
+            return;
+        }
+        dataBases.remove(database);
+    }
+    
+    public void addScript(String script){
+        if(scripts.contains(script)){
+            return;
+        }
+        scripts.add(script);
+    }
+
+    public void removeScript(String script){
+        if(!scripts.contains(script) || scripts.isEmpty()){
+            return;
+        }
+        scripts.remove(script);
+    }
+    
+    public void addLibrarie(String library){
+        if(libraries.contains(library)){
+            return;
+        }
+        libraries.add(library);
+    }
+
+    public void removeLibrarie(String library){
+        if(!libraries.contains(library) || libraries.isEmpty()){
+            return;
+        }
+        libraries.remove(library);
+    }
 }

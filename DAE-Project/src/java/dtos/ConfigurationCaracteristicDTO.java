@@ -6,6 +6,7 @@
 package dtos;
 
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -24,7 +25,7 @@ import lombok.Setter;
 public class ConfigurationCaracteristicDTO implements DTO{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private @Getter @Setter Long id;
     
     @NotNull
