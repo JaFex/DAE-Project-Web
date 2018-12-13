@@ -32,10 +32,6 @@ public class ClientDTO extends UserDTO {
     
     @NotNull
     private @Getter @Setter String address;
-    
-    @NotNull
-    @OneToMany(mappedBy = "personOfContact", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private @Getter @Setter List<PersonOfContact> personOfContact;
 
     public ClientDTO() {
     }
@@ -44,13 +40,11 @@ public class ClientDTO extends UserDTO {
         super(username, password);
         this.nameOfCompany = nameOfCompany;
         this.address = address;
-        personOfContact = new ArrayList<>();
     }
 
     @Override
     public void clear() {
         nameOfCompany = null;
         address = null;
-        personOfContact = null;
     }
 }

@@ -30,14 +30,6 @@ public class UserDTO implements DTO {
     
     @NotNull
     private @Getter @Setter String password;
-    
-    @Null
-    @OneToMany(mappedBy = "configuration", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private @Getter @Setter List<Configuration> configurationList;
-    
-    @Null
-    @OneToMany(mappedBy = "message", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private @Getter @Setter List<Message> messageList;
 
     public UserDTO() {
     }
@@ -45,13 +37,11 @@ public class UserDTO implements DTO {
     public UserDTO(String username, String password) {
         this.username = username;
         this.password = password;
-        configurationList = new ArrayList<>();
     }
     
     @Override
     public void clear() {
         username = null;
         password = null;
-        configurationList = null;
     }
 }

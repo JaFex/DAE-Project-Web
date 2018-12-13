@@ -23,32 +23,10 @@ import lombok.Setter;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class SupportMaterialDTO extends ConfigurationCaracteristicDTO{
     
-    private @Getter @Setter List<String> userManualsList;
-    private @Getter @Setter List<String> programmerManualsList;
-    private @Getter @Setter List<String> tutorialsList;
-    private @Getter @Setter List<String> linksForSitesInProductionsList;
-    private @Getter @Setter List<String> videosList; 
-    private @Getter @Setter List<String> knowledgeArticlesList;
-    private @Getter @Setter List<String> supportDocsList;
-
     public SupportMaterialDTO() {
-        userManualsList = new ArrayList<>();
-        programmerManualsList = new ArrayList<>();
-        tutorialsList = new ArrayList<>();
-        linksForSitesInProductionsList = new ArrayList<>();
-        videosList = new ArrayList<>(); //??
-        knowledgeArticlesList = new ArrayList<>();
-        supportDocsList = new ArrayList<>();
     }
     
     @Override
     public void clear(){
-        userManualsList = null;
-        programmerManualsList = null;
-        tutorialsList = null;
-        linksForSitesInProductionsList = null;
-        videosList = null;
-        knowledgeArticlesList = null;
-        supportDocsList = null;
     }
 }

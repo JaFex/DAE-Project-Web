@@ -27,31 +27,16 @@ public class ArtefactRepositoryDTO extends ConfigurationCaracteristicDTO{
     @NotNull
     private @Getter @Setter String sourceCode;
     
-    @NotNull
-    private @Getter @Setter List<String> dataBases;
-    
-    @NotNull
-    private @Getter @Setter List<String> scripts;
-    
-    @NotNull
-    private @Getter @Setter List<String> libraries;
-    
     public ArtefactRepositoryDTO() {
     }
 
     public ArtefactRepositoryDTO(String sourceCode, String name, String description) {
         super(name, description);
         this.sourceCode = sourceCode;
-        dataBases = new ArrayList<>();
-        scripts = new ArrayList<>();
-        libraries = new ArrayList<>();
     }
  
     @Override
     public void clear() {
         sourceCode = null;
-        dataBases = null;
-        scripts = null;
-        libraries = null;
     }   
 }

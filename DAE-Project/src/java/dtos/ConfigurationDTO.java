@@ -56,33 +56,8 @@ public class ConfigurationDTO implements DTO{
     @NotNull
     private @Getter @Setter String baseVersion;
     
-    @Null
-    private @Getter @Setter List<Module> modulesList;
-    
-    @Null
-    private @Getter @Setter List<Resource> usedResourcesList;
-    
-    @Null
-    private @Getter @Setter List<License> activatedLicensesList;
-    
-    @Null
-    private @Getter @Setter List<String> activatedParameterizationsList;
-    
-    @Null
-    private @Getter @Setter List<String> usedExtensionsList;
-    
     @NotNull
     private @Getter @Setter MaintenanceContract maintenanceContractData;
-    
-    @Null
-    private @Getter @Setter List<ArtefactRepository> repositoryFactsList; 
-    
-    @Null
-    private @Getter @Setter List<SupportMaterial> suportMaterialsList; 
-    
-    @Null
-    @OneToMany(mappedBy = "messageList", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private @Getter @Setter List<Message> messageList;
     
     @NotNull
     @ManyToOne(fetch=FetchType.EAGER)
@@ -97,14 +72,7 @@ public class ConfigurationDTO implements DTO{
         this.state = state;
         this.softwareName = softwareName;
         this.baseVersion = baseVersion;
-        modulesList = new ArrayList<>();
-        usedResourcesList = new ArrayList<>();
-        activatedLicensesList = new ArrayList<>();
-        activatedParameterizationsList = new ArrayList<>();
-        usedExtensionsList = new ArrayList<>();
         this.maintenanceContractData = maintenanceContractData;
-        repositoryFactsList = new ArrayList<>();
-        suportMaterialsList = new ArrayList<>();
     }       
     
     @Override
@@ -113,13 +81,6 @@ public class ConfigurationDTO implements DTO{
         state = null;
         softwareName = null;
         baseVersion = null;
-        modulesList = null;
-        usedResourcesList = null;
-        activatedLicensesList = null;
-        activatedParameterizationsList = null;
-        usedExtensionsList = null;
         maintenanceContractData = null;
-        repositoryFactsList = null;
-        suportMaterialsList = null;
     }   
 }
