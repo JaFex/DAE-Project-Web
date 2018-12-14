@@ -6,6 +6,8 @@
 package entities;
 
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +19,9 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "RESOURCES")
+@NamedQueries(value = {
+    @NamedQuery(name = "Resource.all", query = "SELECT r FROM Resource r"),
+})
 public class Resource extends ConfigurationCaracteristic{
     
     private @Getter @Setter TypeOfResource type; //hardware ou serviço cloud

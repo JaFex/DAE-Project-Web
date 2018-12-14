@@ -8,6 +8,8 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +21,9 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "ARTEFACTS_REPOSITORY")
+@NamedQueries(value = {
+    @NamedQuery(name = "ArtefactRepository.all", query = "SELECT ar FROM ArtefactRepository ar"),
+})
 public class ArtefactRepository extends ConfigurationCaracteristic {
 
     private @Getter @Setter String sourceCode;

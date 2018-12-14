@@ -13,6 +13,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +25,10 @@ import lombok.Setter;
  * @author Carolina Marques
  */
 @Entity
+@Table(name = "PEOPLE_OF_CONTACT")
+@NamedQueries(value = {
+    @NamedQuery(name = "PersonOfContact.all", query = "SELECT p FROM PersonOfContact p"),
+})
 public class PersonOfContact implements Serializable{
     
     @Id
