@@ -28,7 +28,7 @@ public class ConfigBean {
             
             for(int i = 1; i < 6; i++){
                 administratorBean.create(new AdministratorDTO("Admin" + i, "Admin", "admin" + i + "@admin.com", "admin" + i, "password"));
-                clientBean.create(new ClientDTO("Company" + i, "Street" + i, "PersonOfContact" + i, "Client" + i, "password"));
+                clientBean.create(new ClientDTO("Company" + i, "Street" + i, "Client" + i, "password"));
             }
             
         } catch (Exception e) {

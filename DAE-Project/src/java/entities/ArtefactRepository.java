@@ -19,7 +19,7 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "ARTEFACTS_REPOSITORY")
-public class ArtefactRepository extends ConfigurationCaracteristic{
+public class ArtefactRepository extends ConfigurationCaracteristic {
 
     private @Getter @Setter String sourceCode;
     private @Getter @Setter List<String> dataBases;
