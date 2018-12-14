@@ -39,7 +39,7 @@ public class PersonOfContact implements Serializable{
     
     @NotNull
     @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name="PERSONOFCONTACT_ID")
+    @JoinColumn(name="CLIENT_ID")
     private @Getter @Setter Client client;
 
     public PersonOfContact() {

@@ -8,10 +8,14 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.DiscriminatorValue;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -37,7 +41,7 @@ public class Client extends User{
     private @Getter @Setter String address;
     
     @NotNull
-    @OneToMany(mappedBy = "personOfContact", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private @Getter @Setter List<PersonOfContact> personOfContact;
     
     public Client() {

@@ -73,13 +73,13 @@ public class Configuration implements Serializable{
     private @Getter @Setter List<SupportMaterial> suportMaterialsList; 
     
     @Null
-    @OneToMany(mappedBy = "messageList", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "configurationMessage", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private @Getter @Setter List<Message> messageList;
     
     @NotNull
     @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name="CONFIGURATION_ID")
-    private @Getter @Setter User user;
+    @JoinColumn(name="USERCONFIGURATION_ID")
+    private @Getter @Setter User userConfiguration;
     
     public Configuration() {
     }

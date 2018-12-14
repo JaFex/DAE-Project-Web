@@ -39,13 +39,13 @@ public class Message implements Serializable{
     
     @NotNull
     @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name="MESSAGE_ID")
-    private @Getter @Setter User user;
+    @JoinColumn(name="USERMESSAGE_ID")
+    private @Getter @Setter User userMessage;
     
     @NotNull
     @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name="MESSAGELIST_ID")
-    private @Getter @Setter Configuration configuration;
+    @JoinColumn(name="CONFIGURATIONMESSAGE_ID")
+    private @Getter @Setter Configuration configurationMessage;
 
     public Message() {
     }
@@ -53,7 +53,7 @@ public class Message implements Serializable{
     public Message(String description, Date dateOfCreation, User user, Configuration configuration) {
         this.description = description;
         this.dateOfCreation = dateOfCreation;
-        this.user = user;
-        this.configuration = configuration;
+        this.userMessage = user;
+        this.configurationMessage = configuration;
     }    
 }

@@ -8,16 +8,26 @@ package entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 import javax.persistence.MappedSuperclass;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import lombok.Getter;
@@ -29,7 +39,12 @@ import lombok.Setter;
  * @author Elton Pastilha nº2160849
  */
 
-@MappedSuperclass
+@Entity
+@Table(name = "USERS")
+@NamedQueries(value = {
+    @NamedQuery(name = "User.all", query = "SELECT c FROM User c"),
+})
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User implements Serializable {
     
     @Id
@@ -43,11 +58,11 @@ public class User implements Serializable {
     private @Getter @Setter String password;
     
     @Null
-    @OneToMany(mappedBy = "configuration", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "userConfiguration", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private @Getter @Setter List<Configuration> configurationList;
     
     @Null
-    @OneToMany(mappedBy = "message", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "userMessage", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private @Getter @Setter List<Message> messageList;
 
     public User() {
