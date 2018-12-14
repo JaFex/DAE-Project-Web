@@ -8,6 +8,8 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +21,9 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "SUPPORT_MATERIALS")
+@NamedQueries(value = {
+    @NamedQuery(name = "SupportMaterial.all", query = "SELECT su FROM SupportMaterial su"),
+})
 public class SupportMaterial extends ConfigurationCaracteristic{
     
     private @Getter @Setter List<String> userManualsList;

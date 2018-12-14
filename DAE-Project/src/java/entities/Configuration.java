@@ -17,6 +17,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -30,6 +32,9 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "CONFIGURATIONS")
+@NamedQueries(value = {
+    @NamedQuery(name = "Configuration.all", query = "SELECT co FROM Configuration co"),
+})
 public class Configuration implements Serializable{
     
     @Id

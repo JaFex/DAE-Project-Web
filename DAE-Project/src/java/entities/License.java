@@ -8,6 +8,8 @@ package entities;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import lombok.Getter;
@@ -20,6 +22,9 @@ import lombok.Setter;
  */
 @Entity
 @Table(name = "LICENSES")
+@NamedQueries(value = {
+    @NamedQuery(name = "License.all", query = "SELECT l FROM License l"),
+})
 public class License extends ConfigurationCaracteristic{
     
     @NotNull
