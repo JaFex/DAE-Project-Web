@@ -38,7 +38,7 @@ public class AdministratorManager implements Serializable {
     
     private static final Logger logger = Logger.getLogger("web.AdministratorManager");
     
-    //Curent
+    //Current
     private @Getter @Setter ClientDTO currentClient;
     private @Getter @Setter AdministratorDTO  currentAdministrator;
     

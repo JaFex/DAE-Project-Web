@@ -65,14 +65,14 @@ public class ArtefactRepository extends ConfigurationCaracteristic {
         scripts.remove(script);
     }
     
-    public void addLibrarie(String library){
+    public void addLibrary(String library){
         if(libraries.contains(library)){
             return;
         }
         libraries.add(library);
     }
 
-    public void removeLibrarie(String library){
+    public void removeLibrary(String library){
         if(!libraries.contains(library) || libraries.isEmpty()){
             return;
         }

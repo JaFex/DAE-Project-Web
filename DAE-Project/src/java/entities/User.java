@@ -66,7 +66,7 @@ public class User implements Serializable {
         configurationList.add(configuration);
     }
     
-    private void removeObjectFromList(Configuration configuration){
+    private void removeConfiguration(Configuration configuration){
         if(!configurationList.contains(configuration) || configurationList.isEmpty()){
             return;
         }
